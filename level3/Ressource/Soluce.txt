@@ -47,4 +47,4 @@ Maintenant, il ne reste plus qu'à réaliser notre exploit :
 
 Notre chaîne utilisera l'adresse de m. 
 On va mettre 64 en décimal dans notre chaîne avec %n, 
-ce qui mettra en fait 64 dans m.
+ce qui mettra en fait 64 dans m. 
