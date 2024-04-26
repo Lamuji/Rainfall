@@ -1,0 +1,60 @@
+Source Code : 
+
+undefined4 main(undefined4 param_1,int param_2)
+{
+  undefined4 *puVar1;
+  void *pvVar2;
+  undefined4 *puVar3;
+  FILE *__stream;
+  
+  puVar1 = (undefined4 *)malloc(8);
+  *puVar1 = 1;
+  pvVar2 = malloc(8);
+  puVar1[1] = pvVar2;
+  puVar3 = (undefined4 *)malloc(8);
+  *puVar3 = 2;
+  pvVar2 = malloc(8);
+  puVar3[1] = pvVar2;
+  strcpy((char *)puVar1[1],*(char **)(param_2 + 4));
+  strcpy((char *)puVar3[1],*(char **)(param_2 + 8));
+  __stream = fopen("/home/user/level8/.pass","r");
+  fgets(c,0x44,__stream);
+  puts("~~");
+  return 0;
+}
+
+Cleaned : f
+
+int main(int ac, char **av) {
+    char **v1;
+    void *v2;
+    char **v3;
+    FILE *file;
+
+    v1 = (char **)malloc(8);
+    *v1 = 1;
+    v2 = malloc(8);
+    v1[1] = v2;
+    
+    v3 = (char **)malloc(8);
+    *v3 = 2;
+    v2 = malloc(8);
+    v3[1] = v2;
+
+    strcpy(v1[1],av[1]);
+    strcpy(v3[1],av[2]);
+
+    file = fopen("/home/user/level8/.pass","r");
+    fgets(c,0x44,file);
+    puts("~~");
+    return 0;
+}
+
+
+
+
+GOT adress of puts : 0x08049928
+
+adress of m : 0x080484f4
+
+adress of c : 0x08049960
