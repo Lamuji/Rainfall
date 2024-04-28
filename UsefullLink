@@ -1,4 +1,4 @@
-                                                                                                                               |
+-------------------------------------------------------------------------------------------------------------------------------------------------
 Doc Links                                                                                                                      | Exploit Name
                                                                                                                                |
 -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -12,9 +12,23 @@ https://medium.com/@0xwan/binary-exploitation-heap-overflow-to-overwrite-got-d3c
 
 Utils :
 
+command:
+
+scp -P 4242 level8@10.211.55.3:/home/user/level8/level8 .       #Home
+
+scp -P 22222 level8@localhost:/home/user/level8/level8 .       #School
+
+software/extension
+-------------------
+Ghidra
+gdb peda
+
+tools 
 https://www.rapidtables.com/convert/number/hex-to-decimal.html?x=0x40               Hex -> ASCII
 
 https://www.asciitable.com/                                                         ASCII Table
 
 https://zerosum0x0.blogspot.com/2016/11/overflow-exploit-pattern-generator.html     Patern Exploit Generator
+
+
 
