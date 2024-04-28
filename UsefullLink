@@ -1,0 +1,20 @@
+                                                                                                                               |
+Doc Links                                                                                                                      | Exploit Name
+                                                                                                                               |
+-------------------------------------------------------------------------------------------------------------------------------------------------
+https://axcheron.github.io/exploit-101-format-strings/                                                                         | #PRINTF FORMAT 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+https://www.ired.team/offensive-security/code-injection-process-injection/binary-exploitation/return-to-libc-ret2libc          | #RET TO LIBC
+-------------------------------------------------------------------------------------------------------------------------------------------------
+https://medium.com/@0xwan/binary-exploitation-heap-overflow-to-overwrite-got-d3c7d97716f1                                      | #HEAP OVERFLOW
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Utils :
+
+https://www.rapidtables.com/convert/number/hex-to-decimal.html?x=0x40               Hex -> ASCII
+
+https://www.asciitable.com/                                                         ASCII Table
+
+https://zerosum0x0.blogspot.com/2016/11/overflow-exploit-pattern-generator.html     Patern Exploit Generator
+
